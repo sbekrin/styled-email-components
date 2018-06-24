@@ -3,7 +3,7 @@
 [![npm Version](https://img.shields.io/npm/v/styled-email-components.svg?maxAge=0)](https://www.npmjs.com/package/styled-email-components)
 [![Build Status](https://img.shields.io/travis/sergeybekrin/styled-email-components.svg?maxAge=0)](https://travis-ci.org/sergeybekrin/styled-email-components)
 [![dependencies Status](https://img.shields.io/david/sergeybekrin/styled-email-components.svg?maxAge=0)](https://david-dm.org/sergeybekrin/styled-email-components)
-[![devDependencies Status](https://img.shields.io/david/dev/sergeybekrin/styled-email-components.svg?maxAge=0)](https://david-dm.org/sergeybekrin/styled-email-components?type=dev)
+[![devDependencies Status](https://img.shields.io/david/dev/sergeybekrin/styled-email-components.svg?maxAge=0)](https://david-dm.org/sergeybekrin/styled-email-components?type=dev) [![Greenkeeper badge](https://badges.greenkeeper.io/sergeybekrin/styled-email-components.svg)](https://greenkeeper.io/)
 
 [`styled-components`](https://www.styled-components.com/) but with inline styles
 designed for emails! This is an extension of original API which adopts React
