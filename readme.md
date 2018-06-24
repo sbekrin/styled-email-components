@@ -5,9 +5,9 @@
 [![dependencies Status](https://img.shields.io/david/sergeybekrin/styled-email-components.svg?maxAge=0)](https://david-dm.org/sergeybekrin/styled-email-components)
 [![devDependencies Status](https://img.shields.io/david/dev/sergeybekrin/styled-email-components.svg?maxAge=0)](https://david-dm.org/sergeybekrin/styled-email-components?type=dev)
 
-`styled-components` but with inline styles designed for emails! This is an
-extension of original API which adopts React Native approach of injecting styles
-in node or web enviroments.
+[`styled-components`](https://www.styled-components.com/) but with inline styles
+designed for emails! This is an extension of original API which adopts React
+Native approach of injecting styles in node or web enviroments.
 
 ## Installation
 
