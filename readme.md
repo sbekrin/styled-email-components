@@ -1,5 +1,10 @@
 # 💌 styled-email-components
 
+[![npm Version](https://img.shields.io/npm/v/styled-email-components.svg?maxAge=0)](https://www.npmjs.com/package/styled-email-components)
+[![Build Status](https://img.shields.io/travis/sergeybekrin/styled-email-components.svg?maxAge=0)](https://travis-ci.org/sergeybekrin/styled-email-components)
+[![dependencies Status](https://img.shields.io/david/sergeybekrin/styled-email-components.svg?maxAge=0)](https://david-dm.org/sergeybekrin/styled-email-components)
+[![devDependencies Status](https://img.shields.io/david/dev/sergeybekrin/styled-email-components.svg?maxAge=0)](https://david-dm.org/sergeybekrin/styled-email-components?type=dev)
+
 `styled-components` but with inline styles designed for emails! This is an
 extension of original API which adopts React Native approach of injecting styles
 in node or web enviroments.
