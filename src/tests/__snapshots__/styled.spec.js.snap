@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`styled composes components 1`] = `
+<a
+  href="https://example.com"
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "color": "white",
+      "fontSize": 20,
+      "fontWeight": "bold",
+      "paddingBottom": 10,
+      "paddingLeft": 20,
+      "paddingRight": 20,
+      "paddingTop": 10,
+      "textDecorationColor": "black",
+      "textDecorationLine": "none",
+      "textDecorationStyle": "solid",
+    }
+  }
+>
+  Click me
+</a>
+`;
+
+exports[`styled expands style rules 1`] = `
+<p
+  style={
+    Object {
+      "backgroundColor": "#333",
+      "borderColor": "#333",
+      "borderStyle": "solid",
+      "borderWidth": 1,
+    }
+  }
+/>
+`;
+
+exports[`styled interpolates props-based values correctly 1`] = `
+<p
+  style={
+    Object {
+      "color": "#333",
+      "fontSize": 32,
+    }
+  }
+>
+  Hey
+</p>
+`;
+
+exports[`styled merges with \`style\` prop 1`] = `
+<a
+  style={
+    Object {
+      "color": "blue",
+      "fontSize": 16,
+    }
+  }
+/>
+`;
+
+exports[`styled warns about nested rules 1`] = `
+<div
+  style={
+    Object {
+      "color": "#333",
+    }
+  }
+/>
+`;
+
+exports[`styled warns about nested rules 2`] = `"Node of type rule not supported as an inline style"`;
+
+exports[`styled works with \`.attrs\` 1`] = `
+<a
+  href="https://example.com"
+  style={
+    Object {
+      "color": "blue",
+    }
+  }
+  target="blank"
+>
+  Click me
+</a>
+`;
+
+exports[`styled works with \`.extend\` 1`] = `
+<p
+  style={
+    Object {
+      "color": "#333",
+      "fontSize": 32,
+    }
+  }
+>
+  Hey
+</p>
+`;
+
+exports[`styled works with \`.withComponent\` 1`] = `
+<h1
+  style={
+    Object {
+      "color": "green",
+    }
+  }
+>
+  Hey
+</h1>
+`;
+
+exports[`styled works with \`css\` helper 1`] = `
+<a
+  style={
+    Object {
+      "color": "blue",
+      "fontSize": 16,
+    }
+  }
+>
+  Click
+</a>
+`;
+
+exports[`styled works with \`styled(Component)\` 1`] = `
+<a
+  style={
+    Object {
+      "color": "green",
+      "fontWeight": "bold",
+    }
+  }
+>
+  Hey
+</a>
+`;
+
+exports[`styled works with \`styled.component\` 1`] = `
+<a
+  style={
+    Object {
+      "color": "blue",
+      "fontWeight": "bold",
+    }
+  }
+>
+  Hey
+</a>
+`;

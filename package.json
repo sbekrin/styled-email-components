@@ -1,0 +1,75 @@
+{
+  "name": "styled-email-components",
+  "version": "0.1.0",
+  "description": "styled-components adopted for emails",
+  "author": "Sergey Bekrin <sergey@bekrin.me>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "typings": "typings/styled-email-components.d.ts",
+  "scripts": {
+    "prebuild": "rm -rf ./lib",
+    "build": "babel ./src --out-dir lib --ignore tests",
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "hoist-non-react-statics": "^2.5.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-unobtrusive": "^1.2.2",
+    "eslint-plugin-prettier": "^2.6.1",
+    "eslint-plugin-react": "^7.9.1",
+    "jest": "^23.1.0",
+    "prettier": "^1.13.5",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-test-renderer": "^16.4.1",
+    "styled-components": "^3.3.3"
+  },
+  "peerDependencies": {
+    "react": ">=15",
+    "styled-components": ">=3"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "proseWrap": "always"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "unobtrusive",
+      "unobtrusive/react"
+    ],
+    "env": {
+      "es6": true,
+      "node": true
+    }
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
