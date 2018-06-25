@@ -24,7 +24,7 @@ const styled = element =>
   constructWithOptions(createStyledComponent, element, { ParentComponent });
 
 // Set html element aliases
-domElements.concat('center').forEach(element =>
+[...domElements, 'center', 'font'].forEach(element =>
   Object.defineProperty(styled, element, {
     enumerable: true,
     configurable: false,
