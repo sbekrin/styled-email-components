@@ -116,11 +116,23 @@ describe('styled', () => {
     expect(render(<Box />)).toMatchSnapshot();
   });
 
-  it('merges with `style` prop', () => {
+  it('overrides and merges styles by value from `style` prop', () => {
     const Link = styled.a`
       font-size: 16px;
       color: red;
     `;
     expect(render(<Link style={{ color: 'blue' }} />)).toMatchSnapshot();
+  });
+
+  it('overrides and merges styles by value from `.attrs`', () => {
+    const Link = styled.a.attrs({
+      style: {
+        color: 'red',
+      },
+    })`
+      font-size: 16px;
+      color: blue;
+    `;
+    expect(render(<Link />)).toMatchSnapshot();
   });
 });

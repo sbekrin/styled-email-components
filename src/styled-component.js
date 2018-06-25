@@ -87,13 +87,12 @@ class StyledMailComponent extends React.Component {
   }
 
   render() {
-    const { style } = this.props;
     const { generatedStyles } = this.state;
     const { target } = this.constructor;
     const props = {
       ...this.attrs,
       ...this.props,
-      style: [generatedStyles, style],
+      style: [generatedStyles, this.attrs.style, this.props.style],
     };
     const nextProps = Object.keys(props).reduce((acc, prop) => {
       switch (prop) {

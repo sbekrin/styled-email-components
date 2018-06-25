@@ -49,7 +49,18 @@ exports[`styled interpolates props-based values correctly 1`] = `
 </p>
 `;
 
-exports[`styled merges with \`style\` prop 1`] = `
+exports[`styled overrides and merges styles by value from \`.attrs\` 1`] = `
+<a
+  style={
+    Object {
+      "color": "red",
+      "fontSize": "16px",
+    }
+  }
+/>
+`;
+
+exports[`styled overrides and merges styles by value from \`style\` prop 1`] = `
 <a
   style={
     Object {
