@@ -7,12 +7,12 @@ exports[`styled composes components 1`] = `
     Object {
       "backgroundColor": "blue",
       "color": "white",
-      "fontSize": 20,
+      "fontSize": "20px",
       "fontWeight": "bold",
-      "paddingBottom": 10,
-      "paddingLeft": 20,
-      "paddingRight": 20,
-      "paddingTop": 10,
+      "paddingBottom": "10px",
+      "paddingLeft": "20px",
+      "paddingRight": "20px",
+      "paddingTop": "10px",
       "textDecorationColor": "black",
       "textDecorationLine": "none",
       "textDecorationStyle": "solid",
@@ -27,10 +27,10 @@ exports[`styled expands style rules 1`] = `
 <p
   style={
     Object {
-      "backgroundColor": "#333",
-      "borderColor": "#333",
+      "backgroundColor": "#333333",
+      "borderColor": "#333333",
       "borderStyle": "solid",
-      "borderWidth": 1,
+      "borderWidth": "1px",
     }
   }
 />
@@ -40,8 +40,8 @@ exports[`styled interpolates props-based values correctly 1`] = `
 <p
   style={
     Object {
-      "color": "#333",
-      "fontSize": 32,
+      "color": "#333333",
+      "fontSize": "32px",
     }
   }
 >
@@ -54,7 +54,7 @@ exports[`styled merges with \`style\` prop 1`] = `
   style={
     Object {
       "color": "blue",
-      "fontSize": 16,
+      "fontSize": "16px",
     }
   }
 />
@@ -64,7 +64,7 @@ exports[`styled warns about nested rules 1`] = `
 <div
   style={
     Object {
-      "color": "#333",
+      "color": "#333333",
     }
   }
 />
@@ -90,8 +90,8 @@ exports[`styled works with \`.extend\` 1`] = `
 <p
   style={
     Object {
-      "color": "#333",
-      "fontSize": 32,
+      "color": "#333333",
+      "fontSize": "32px",
     }
   }
 >
@@ -116,7 +116,7 @@ exports[`styled works with \`css\` helper 1`] = `
   style={
     Object {
       "color": "blue",
-      "fontSize": 16,
+      "fontSize": "16px",
     }
   }
 >

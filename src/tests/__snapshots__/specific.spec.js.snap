@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`specific expands color to 6 digits 1`] = `
+<p
+  style={
+    Object {
+      "borderColor": "#333333",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "color": "#000000",
+    }
+  }
+/>
+`;
+
+exports[`specific outputs correct units 1`] = `
+<center
+  style={
+    Object {
+      "left": "-1em",
+      "marginBottom": "10in",
+      "marginLeft": "10in",
+      "marginRight": "10in",
+      "marginTop": "10in",
+      "paddingBottom": "10px",
+      "paddingLeft": "10px",
+      "paddingRight": "10px",
+      "paddingTop": "10px",
+      "right": "5pt",
+    }
+  }
+/>
+`;
+
+exports[`specific supports mail-specific props 1`] = `
+<center
+  style={
+    Object {
+      "msoHide": "all",
+    }
+  }
+/>
+`;
+
+exports[`specific supports vml specific elements 1`] = `
+<w:anchorlock
+  style={Object {}}
+/>
+`;

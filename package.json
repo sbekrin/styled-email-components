@@ -16,6 +16,7 @@
     "node": ">=8"
   },
   "dependencies": {
+    "color-shorthand-hex-to-six-digit": "^2.2.2",
     "hoist-non-react-statics": "^2.5.5"
   },
   "devDependencies": {

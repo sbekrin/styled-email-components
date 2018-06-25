@@ -7,14 +7,14 @@ import {
   ServerStyleSheet,
   StyleSheetManager,
 } from 'styled-components';
-import createInlineStyle from 'styled-components/lib/models/InlineStyle';
 import createStyledNativeComponent from 'styled-components/lib/models/StyledNativeComponent';
 import createConstructWithOptions from 'styled-components/lib/constructors/constructWithOptions';
 import domElements from 'styled-components/lib/utils/domElements';
+import createMailStyle from './mail-style';
 import ParentComponent from './styled-component';
 import StyleSheet from './stylesheet';
 
-const InlineStyle = createInlineStyle(StyleSheet);
+const InlineStyle = createMailStyle(StyleSheet);
 const constructWithOptions = createConstructWithOptions(css);
 const createStyledComponent = createStyledNativeComponent(
   constructWithOptions,
