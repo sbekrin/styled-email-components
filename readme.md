@@ -1,13 +1,33 @@
 # 💌 styled-email-components
 
-[![npm Version](https://img.shields.io/npm/v/styled-email-components.svg?maxAge=0)](https://www.npmjs.com/package/styled-email-components)
-[![Build Status](https://img.shields.io/travis/sergeybekrin/styled-email-components.svg?maxAge=0)](https://travis-ci.org/sergeybekrin/styled-email-components)
-[![dependencies Status](https://img.shields.io/david/sergeybekrin/styled-email-components.svg?maxAge=0)](https://david-dm.org/sergeybekrin/styled-email-components)
-[![devDependencies Status](https://img.shields.io/david/dev/sergeybekrin/styled-email-components.svg?maxAge=0)](https://david-dm.org/sergeybekrin/styled-email-components?type=dev)
+[![npm Version](https://img.shields.io/npm/v/styled-email-components.svg)](https://www.npmjs.com/package/styled-email-components)
+[![Build Status](https://img.shields.io/travis/sergeybekrin/styled-email-components.svg)](https://travis-ci.org/sergeybekrin/styled-email-components)
+[![dependencies Status](https://img.shields.io/david/sergeybekrin/styled-email-components.svg)](https://david-dm.org/sergeybekrin/styled-email-components)
+[![devDependencies Status](https://img.shields.io/david/dev/sergeybekrin/styled-email-components.svg)](https://david-dm.org/sergeybekrin/styled-email-components?type=dev)
 
-[`styled-components`](https://www.styled-components.com/) but with inline styles
-designed for emails! This is an extension of original API which adopts React
-Native approach of injecting styles in node or web enviroments.
+[`styled-components`](https://www.styled-components.com/) for emails. This is an
+extension of original API which adopts React Native like approach of injecting
+styles.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Motivation](#motivation)
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Differences](#differences)
+- [API](#api)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Motivation
+
+`styled-components` is a universal styling solution for various target
+environments with great developer experience and low learning curve.
+Unfortunately there's no way of using it natively to build React-based emails
+due to email clients limitations. This module adds all nessecary features to
+build mail-first components.
 
 ## Installation
 
@@ -19,12 +39,11 @@ yarn add styled-email-components styled-components
 npm install --save styled-email-components styled-components
 ```
 
-ℹ️ Tip: Don't forget to install `styled-components` itself as a peer dependency.
+ℹ️ Don't forget to install `styled-components` itself as a peer dependency.
 
 ## Getting Started
 
-`styled-email-components` uses same syntax to define components, with tagged
-template literals:
+`styled-email-components` uses same syntax to define components:
 
 ```js
 import React from 'react';
@@ -48,34 +67,22 @@ Check original
 [Gettings Started](https://www.styled-components.com/docs/basics#getting-started)
 for more examples.
 
-## Extra
+## Differences
 
-In addition to full list of html elements, this module provides handy `vml`,
-`wml` and `office` namespaces for Outlook-specific needs:
+These are key differences compared to original implementation:
 
-```js
-import styled from 'styled-email-components';
-
-const RoundRect = styled.vml.roundrect.attrs({
-  arcsize: '10%',
-  strokecolor: '#1e3650',
-  fill: 'true',
-})`
-  v-text-anchor: middle;
-  height: 40px;
-  width: 200px;
-`;
-
-export default RoundRect;
-```
-
-Note that all `styled.vml.*`, `styled.wml.*` and `styled.office.*` elements are
-passed as-is and not name or type checked.
+- Styles are set inline
+- `styled.*` aliases uses
+  [XTML 1.0 Transitional](https://www.w3.org/TR/xhtml1/#a_dtd_XHTML-1.0-Transitional)
+  list of elements instead of HTML5
+- [Outlook specific](https://en.wikipedia.org/wiki/Vector_Markup_Language)
+  `styled.vml.*`, `styled.wml.*` and `styled.office.*` elements are proxied
+- Hex colors are expanded to 6 characters
 
 ## API
 
-`styled-email-components` supports all of necessary APIs for building great
-emails:
+`styled-email-components` modifies only `styled` implementation and mirrors rest
+of API as-is:
 
 - [`styled`](https://www.styled-components.com/docs/api#styled)
   - [`.attrs`](https://www.styled-components.com/docs/api#attrs)

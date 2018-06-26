@@ -1,7 +1,7 @@
 {
   "name": "styled-email-components",
   "version": "1.0.3",
-  "description": "styled-components adopted for emails",
+  "description": "💌 styled-components for emails",
   "author": "Sergey Bekrin <sergey@bekrin.me>",
   "license": "MIT",
   "main": "lib/index.js",
