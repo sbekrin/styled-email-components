@@ -10,6 +10,9 @@ export default stylesheet => {
       return Object.keys(style).reduce((acc, rule) => {
         // Transform unitless numbers to pixels
         if (typeof style[rule] === 'number') {
+          if (['lineHeight'].includes(rule)) {
+            return { ...acc, [rule]: style[rule].toString() };
+          }
           return { ...acc, [rule]: `${style[rule]}px` };
         }
         // Expand hex colors

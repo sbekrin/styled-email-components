@@ -18,6 +18,7 @@ exports[`specific outputs correct units 1`] = `
   style={
     Object {
       "left": "-1em",
+      "lineHeight": "1.2",
       "marginBottom": "10in",
       "marginLeft": "10in",
       "marginRight": "10in",

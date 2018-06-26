@@ -23,6 +23,7 @@ describe('specific', () => {
       margin: 10in;
       left: -1em;
       right: 5pt;
+      line-height: 1.2;
     `;
     expect(render(<Box />)).toMatchSnapshot();
   });
