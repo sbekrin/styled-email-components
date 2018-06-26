@@ -73,7 +73,7 @@ These are key differences compared to original implementation:
 
 - Styles are set inline
 - `styled.*` aliases uses
-  [XTML 1.0 Transitional](https://www.w3.org/TR/xhtml1/#a_dtd_XHTML-1.0-Transitional)
+  [XHTML 1.0 Transitional](https://www.w3.org/TR/xhtml1/#a_dtd_XHTML-1.0-Transitional)
   list of elements instead of HTML5
 - [Outlook specific](https://en.wikipedia.org/wiki/Vector_Markup_Language)
   `styled.vml.*`, `styled.wml.*` and `styled.office.*` elements are proxied
