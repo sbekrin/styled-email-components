@@ -9,7 +9,7 @@ import {
 } from 'styled-components';
 import createStyledNativeComponent from 'styled-components/lib/models/StyledNativeComponent';
 import createConstructWithOptions from 'styled-components/lib/constructors/constructWithOptions';
-import domElements from 'styled-components/lib/utils/domElements';
+import xhtmlElements from './utils/xhtml-elements';
 import createMailStyle from './mail-style';
 import ParentComponent from './styled-component';
 import StyleSheet from './stylesheet';
@@ -23,8 +23,8 @@ const createStyledComponent = createStyledNativeComponent(
 const styled = element =>
   constructWithOptions(createStyledComponent, element, { ParentComponent });
 
-// Set html element aliases
-[...domElements, 'center', 'font'].forEach(element =>
+// Set xhtml element aliases
+xhtmlElements.forEach(element =>
   Object.defineProperty(styled, element, {
     enumerable: true,
     configurable: false,
