@@ -5,6 +5,7 @@ import determineTheme from 'styled-components/lib/utils/determineTheme';
 import isValidAttr from 'styled-components/lib/utils/validAttr';
 import isTag from 'styled-components/lib/utils/isTag';
 import StyleSheet from './stylesheet';
+import isVmlTag from './utils/is-vml-tag';
 
 // Based on:
 // https://github.com/styled-components/styled-components/blob/master/src/models/StyledNativeComponent.js#L22
@@ -109,12 +110,12 @@ class StyledMailComponent extends React.Component {
             return { ...acc, innerRef };
           }
           return { ...acc, ref: innerRef };
-        // Prevent non-valid DOM attributes
+        // Prevent non-valid DOM or VML attributes
         default:
-          if (!isTag(target) || isValidAttr(prop)) {
-            return { ...acc, [prop]: props[prop] };
+          if (isTag(target) && !isVmlTag(target) && !isValidAttr(prop)) {
+            return acc;
           }
-          return acc;
+          return { ...acc, [prop]: props[prop] };
       }
     }, {});
     return React.createElement(target, nextProps);

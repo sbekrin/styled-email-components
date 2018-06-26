@@ -17,6 +17,14 @@ describe('specific', () => {
     expect(render(<AnchorLock />)).toMatchSnapshot();
   });
 
+  fit('supports custom attributes', () => {
+    const RoundRect = styled.vml.roundrect.attrs({
+      'xmlns:v': 'urn:schemas-microsoft-com:vml',
+      'xmlns:w': 'urn:schemas-microsoft-com:office:word',
+    })``;
+    expect(render(<RoundRect />)).toMatchSnapshot();
+  });
+
   it('outputs correct units', () => {
     const Box = styled.center`
       padding: 10px;

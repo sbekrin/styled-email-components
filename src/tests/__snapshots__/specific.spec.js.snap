@@ -33,6 +33,14 @@ exports[`specific outputs correct units 1`] = `
 />
 `;
 
+exports[`specific supports custom attributes 1`] = `
+<v:roundrect
+  style={Object {}}
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:w="urn:schemas-microsoft-com:office:word"
+/>
+`;
+
 exports[`specific supports mail-specific props 1`] = `
 <center
   style={
