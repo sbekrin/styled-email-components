@@ -5,9 +5,8 @@
 [![dependencies Status](https://img.shields.io/david/sergeybekrin/styled-email-components.svg)](https://david-dm.org/sergeybekrin/styled-email-components)
 [![devDependencies Status](https://img.shields.io/david/dev/sergeybekrin/styled-email-components.svg)](https://david-dm.org/sergeybekrin/styled-email-components?type=dev)
 
-[`styled-components`](https://www.styled-components.com/) for emails. This is an
-extension of original API which adopts React Native like approach of injecting
-styles.
+Extension of [`styled-components`](https://www.styled-components.com/) with
+essential features for building email components.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -15,35 +14,42 @@ styles.
 - [Motivation](#motivation)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
-- [Differences](#differences)
 - [API](#api)
+  - [`styled.*`](#styled)
+  - [`styled.vml.*`](#styledvml)
+  - [Other APIs](#other-apis)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Motivation
 
-`styled-components` is a universal styling solution for various target
-environments with great developer experience and low learning curve.
-Unfortunately there's no way of using it natively to build React-based emails
-due to email clients limitations. This module adds all nessecary features to
-build mail-first components.
+`styled-components` is a universal styling solution with great developer
+experience and low learning curve. Unfortunately there's no native support for
+inline styling which is essential for building emails. This module adds all
+nessecary features to build mail-first components.
 
 ## Installation
 
-```sh
-# yarn
-yarn add styled-email-components styled-components
+Don't forget to install `styled-components` itself as a peer dependency.
 
-# npm
+yarn:
+
+```sh
+yarn add styled-email-components styled-components
+```
+
+npm:
+
+```sh
 npm install --save styled-email-components styled-components
 ```
 
-ℹ️ Don't forget to install `styled-components` itself as a peer dependency.
-
 ## Getting Started
 
-`styled-email-components` uses same syntax to define components:
+Check original
+[Gettings Started](https://www.styled-components.com/docs/basics#getting-started)
+for more examples.
 
 ```js
 import React from 'react';
@@ -63,37 +69,26 @@ console.assert(
 );
 ```
 
-Check original
-[Gettings Started](https://www.styled-components.com/docs/basics#getting-started)
-for more examples.
-
-## Differences
-
-These are key differences compared to original implementation:
-
-- Styles are set inline
-- `styled.*` aliases uses
-  [XHTML 1.0 Transitional](https://www.w3.org/TR/xhtml1/#a_dtd_XHTML-1.0-Transitional)
-  list of elements instead of HTML5
-- [Outlook specific](https://en.wikipedia.org/wiki/Vector_Markup_Language)
-  `styled.vml.*`, `styled.wml.*` and `styled.office.*` elements are proxied
-- Hex colors are expanded to 6 characters
-
 ## API
 
-`styled-email-components` modifies only `styled` implementation and mirrors rest
-of API as-is:
+### `styled.*`
 
-- [`styled`](https://www.styled-components.com/docs/api#styled)
-  - [`.attrs`](https://www.styled-components.com/docs/api#attrs)
-  - [`.extend`](https://www.styled-components.com/docs/api#extend)
-  - [`.withComponent`](https://www.styled-components.com/docs/api#withcomponent)
-- [`css`](https://www.styled-components.com/docs/api#css)
-- [`injectGlobal`](https://www.styled-components.com/docs/api#injectglobal)
-- [`isStyledComponent`](https://www.styled-components.com/docs/api#isstyledcomponent)
-- [`withTheme`](https://www.styled-components.com/docs/api#withtheme)
-- [`ThemeProvider`](https://www.styled-components.com/docs/api#themeprovider)
-- [Server-side rendering](https://www.styled-components.com/docs/advanced#server-side-rendering)
+This module sets list of XHTML 1.0 Transitional
+[element aliases](./src/utils/xhtml-elements.js) instead of original HTML5 set,
+which is widely used doctype in mails.
+
+### `styled.vml.*`
+
+In addition to XHTML elements, `styled.vml.*`, `styled.wml.*` and
+`styled.office.*` aliases are available. These are simple proxies and passes tag
+names as-is with `v:`, `w:` and `o:` prefixes respectevly.
+
+### Other APIs
+
+[Original APIs](https://www.styled-components.com/docs/api) are mirrored without
+any modifications from `styled-components`. Make sure to check
+[server-side rendering](https://www.styled-components.com/docs/advanced#server-side-rendering)
+for rendering final email.
 
 ## License
 

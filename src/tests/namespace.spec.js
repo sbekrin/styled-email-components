@@ -4,7 +4,6 @@ import styled from '../';
 
 describe('namespace', () => {
   it('supports vml, wml and office namespaces', () => {
-    // Test button based on VML version of https://buttons.cm/
     const RoundRect = styled.vml.roundrect.attrs({
       arcsize: '10%',
       strokecolor: '#1e3650',

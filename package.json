@@ -88,7 +88,7 @@
       "git add"
     ],
     "readme.md": [
-      "doctoc --github --notitle --maxlevel 2",
+      "doctoc --github --notitle --maxlevel 3",
       "prettier --write",
       "git add"
     ]
