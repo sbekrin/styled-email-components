@@ -4,9 +4,18 @@ exports[`specific expands color to 6 digits 1`] = `
 <p
   style={
     Object {
-      "borderColor": "#333333",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
+      "borderBottomColor": "#333333",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "1px",
+      "borderLeftColor": "#333333",
+      "borderLeftStyle": "solid",
+      "borderLeftWidth": "1px",
+      "borderRightColor": "#333333",
+      "borderRightStyle": "solid",
+      "borderRightWidth": "1px",
+      "borderTopColor": "#333333",
+      "borderTopStyle": "solid",
+      "borderTopWidth": "1px",
       "color": "#000000",
     }
   }

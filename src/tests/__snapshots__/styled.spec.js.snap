@@ -13,9 +13,7 @@ exports[`styled composes components 1`] = `
       "paddingLeft": "20px",
       "paddingRight": "20px",
       "paddingTop": "10px",
-      "textDecorationColor": "black",
-      "textDecorationLine": "none",
-      "textDecorationStyle": "solid",
+      "textDecoration": "none",
     }
   }
 >
@@ -28,9 +26,18 @@ exports[`styled expands style rules 1`] = `
   style={
     Object {
       "backgroundColor": "#333333",
-      "borderColor": "#333333",
-      "borderStyle": "solid",
-      "borderWidth": "1px",
+      "borderBottomColor": "#333333",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "1px",
+      "borderLeftColor": "#333333",
+      "borderLeftStyle": "solid",
+      "borderLeftWidth": "1px",
+      "borderRightColor": "#333333",
+      "borderRightStyle": "solid",
+      "borderRightWidth": "1px",
+      "borderTopColor": "#333333",
+      "borderTopStyle": "solid",
+      "borderTopWidth": "1px",
     }
   }
 />

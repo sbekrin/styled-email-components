@@ -18,7 +18,9 @@
   },
   "dependencies": {
     "color-shorthand-hex-to-six-digit": "^2.2.2",
-    "hoist-non-react-statics": "^2.5.5"
+    "css-shorthand-expand": "^1.2.0",
+    "fbjs": "^0.8.17",
+    "postcss-safe-parser": "^3.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

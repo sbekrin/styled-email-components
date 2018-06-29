@@ -10,7 +10,7 @@ import {
 import createStyledNativeComponent from 'styled-components/lib/models/StyledNativeComponent';
 import createConstructWithOptions from 'styled-components/lib/constructors/constructWithOptions';
 import xhtmlElements from './utils/xhtml-elements';
-import createMailStyle from './mail-style';
+import createMailStyle from './inline-mail-style';
 import ParentComponent from './styled-component';
 import StyleSheet from './stylesheet';
 
