@@ -25,9 +25,9 @@ essential features for building email components.
 ## Motivation
 
 `styled-components` is a universal styling solution with great developer
-experience and low learning curve. Unfortunately there's no native support for
+experience and low learning curve. Unfortunately, there's no native support for
 inline styling which is essential for building emails. This module adds all
-nessecary features to build mail-first components.
+necessary features to build mail-first components.
 
 ## Installation
 
@@ -75,12 +75,12 @@ console.assert(
 
 This module sets list of XHTML 1.0 Transitional
 [element aliases](./src/utils/xhtml-elements.js) instead of original HTML5 set,
-which is widely used doctype in mails.
+which is a widely used doctype in mails.
 
 ### `styled.vml.*`
 
 In addition to XHTML elements, `styled.vml.*`, `styled.wml.*` and
-`styled.office.*` aliases are available. These are simple proxies and passes tag
+`styled.office.*` aliases are available. These are simple proxies and pass tag
 names as-is with `v:`, `w:` and `o:` prefixes respectevly.
 
 ### Other APIs
@@ -88,7 +88,7 @@ names as-is with `v:`, `w:` and `o:` prefixes respectevly.
 [Original APIs](https://www.styled-components.com/docs/api) are mirrored without
 any modifications from `styled-components`. Make sure to check
 [server-side rendering](https://www.styled-components.com/docs/advanced#server-side-rendering)
-for rendering final email.
+for rendering the final email.
 
 ## License
 
