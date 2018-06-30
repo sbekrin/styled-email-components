@@ -11,6 +11,7 @@ essential features for building email components.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+- [Features](#features)
 - [Motivation](#motivation)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
@@ -21,6 +22,15 @@ essential features for building email components.
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Features
+
+- Styles are injected inline
+- [Shorthand rules](./src/css-to-style.js#L6) are expanded
+- [`styled.*` aliases](./src/utils/xhtml-elements.js) are XHTML compliant
+- Supports [Outlook-specific elements](#styledvml)
+- Compatible with [original APIs](https://www.styled-components.com/docs/api)
+- Provides TypeScript typings
 
 ## Motivation
 
@@ -62,11 +72,9 @@ const Link = styled.a`
   color: white;
 `;
 
-// That works 😱
-console.assert(
-  renderToStaticMarkup(<Link href="https://example.com">Hey</Link>),
-  '<a href="https://example.com" style="font-family:sans-serif;background-color:blue;color:white;">Hey</a>',
-);
+renderToStaticMarkup(<Link href="https://example.com">Hey</Link>),
+// 👇 output
+// <a href="https://example.com" style="font-family:sans-serif;background-color:blue;color:white;">Hey</a>
 ```
 
 ## API
@@ -88,7 +96,7 @@ names as-is with `v:`, `w:` and `o:` prefixes respectevly.
 [Original APIs](https://www.styled-components.com/docs/api) are mirrored without
 any modifications from `styled-components`. Make sure to check
 [server-side rendering](https://www.styled-components.com/docs/advanced#server-side-rendering)
-for rendering the final email.
+guide for rendering the final email.
 
 ## License
 
