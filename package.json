@@ -11,7 +11,8 @@
     "prebuild": "rm -rf ./lib",
     "build": "babel ./src --out-dir lib --ignore tests",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "test-types": "tsc --noEmit typings/**/*.spec.tsx"
   },
   "engines": {
     "node": ">=8"
@@ -23,6 +24,8 @@
     "postcss-safe-parser": "^3.0.1"
   },
   "devDependencies": {
+    "@types/node": "^10.5.1",
+    "@types/react": "^16.4.6",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -42,11 +45,12 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-test-renderer": "^16.4.1",
-    "styled-components": "^3.3.3"
+    "styled-components": "^3.3.3",
+    "typescript": "^2.9.2"
   },
   "peerDependencies": {
     "react": ">=15",
-    "styled-components": ">=3"
+    "styled-components": "~3"
   },
   "prettier": {
     "singleQuote": true,
