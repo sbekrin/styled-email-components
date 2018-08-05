@@ -10,7 +10,18 @@ describe('styled', () => {
       font-weight: bold;
       color: blue;
     `;
-    expect(render(<Link>Hey</Link>)).toMatchSnapshot();
+    expect(render(<Link>Hey</Link>)).toMatchInlineSnapshot(`
+<a
+  style={
+    Object {
+      "color": "blue",
+      "fontWeight": "bold",
+    }
+  }
+>
+  Hey
+</a>
+`);
   });
 
   it('works with `styled(Component)`', () => {
@@ -18,7 +29,18 @@ describe('styled', () => {
       font-weight: bold;
       color: green;
     `;
-    expect(render(<Link>Hey</Link>)).toMatchSnapshot();
+    expect(render(<Link>Hey</Link>)).toMatchInlineSnapshot(`
+<a
+  style={
+    Object {
+      "color": "green",
+      "fontWeight": "bold",
+    }
+  }
+>
+  Hey
+</a>
+`);
   });
 
   it('interpolates props-based values correctly', () => {
@@ -26,7 +48,18 @@ describe('styled', () => {
       color: #333;
       font-size: ${props => (props.big ? 32 : 16)}px;
     `;
-    expect(render(<Text big>Hey</Text>)).toMatchSnapshot();
+    expect(render(<Text big>Hey</Text>)).toMatchInlineSnapshot(`
+<p
+  style={
+    Object {
+      "color": "#333333",
+      "fontSize": "32px",
+    }
+  }
+>
+  Hey
+</p>
+`);
   });
 
   it('composes components', () => {
@@ -46,9 +79,27 @@ describe('styled', () => {
       padding: 10px 20px;
       font-size: 20px;
     `;
-    expect(
-      render(<BigButton href="https://example.com">Click me</BigButton>),
-    ).toMatchSnapshot();
+    expect(render(<BigButton href="https://example.com">Click me</BigButton>))
+      .toMatchSnapshot(`
+<a
+  href="https://example.com"
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "color": "white",
+      "fontSize": "20px",
+      "fontWeight": "bold",
+      "paddingBottom": "10px",
+      "paddingLeft": "20px",
+      "paddingRight": "20px",
+      "paddingTop": "10px",
+      "textDecoration": "none",
+    }
+  }
+>
+  Click me
+</a>
+`);
   });
 
   it('works with `.attrs`', () => {
@@ -58,7 +109,19 @@ describe('styled', () => {
     })`
       color: blue;
     `;
-    expect(render(<Action>Click me</Action>)).toMatchSnapshot();
+    expect(render(<Action>Click me</Action>)).toMatchInlineSnapshot(`
+<a
+  href="https://example.com"
+  style={
+    Object {
+      "color": "blue",
+    }
+  }
+  target="blank"
+>
+  Click me
+</a>
+`);
   });
 
   it('works with `.extend`', () => {
@@ -69,7 +132,18 @@ describe('styled', () => {
     const BigText = Text.extend`
       font-size: 32px;
     `;
-    expect(render(<BigText>Hey</BigText>)).toMatchSnapshot();
+    expect(render(<BigText>Hey</BigText>)).toMatchInlineSnapshot(`
+<p
+  style={
+    Object {
+      "color": "#333333",
+      "fontSize": "32px",
+    }
+  }
+>
+  Hey
+</p>
+`);
   });
 
   it('works with `.withComponent`', () => {
@@ -77,7 +151,17 @@ describe('styled', () => {
       color: green;
     `;
     const Heading = Text.withComponent('h1');
-    expect(render(<Heading>Hey</Heading>)).toMatchSnapshot();
+    expect(render(<Heading>Hey</Heading>)).toMatchInlineSnapshot(`
+<h1
+  style={
+    Object {
+      "color": "green",
+    }
+  }
+>
+  Hey
+</h1>
+`);
   });
 
   it('works with `css` helper', () => {
@@ -88,7 +172,18 @@ describe('styled', () => {
       font-size: 16px;
       ${mixin};
     `;
-    expect(render(<Link primary>Click</Link>)).toMatchSnapshot();
+    expect(render(<Link primary>Click</Link>)).toMatchInlineSnapshot(`
+<a
+  style={
+    Object {
+      "color": "blue",
+      "fontSize": "16px",
+    }
+  }
+>
+  Click
+</a>
+`);
   });
 
   it('warns about nested rules', () => {
@@ -103,8 +198,18 @@ describe('styled', () => {
         color: blue;
       }
     `;
-    expect(render(<Invalid />)).toMatchSnapshot();
-    expect(lastConsoleWarn).toMatchSnapshot();
+    expect(render(<Invalid />)).toMatchInlineSnapshot(`
+<div
+  style={
+    Object {
+      "color": "#333333",
+    }
+  }
+/>
+`);
+    expect(lastConsoleWarn).toMatchInlineSnapshot(
+      `"Node of type rule not supported as an inline style"`,
+    );
     console.warn = originalConsoleWarn;
   });
 
@@ -113,7 +218,27 @@ describe('styled', () => {
       border: 1px solid #333;
       background: #333;
     `;
-    expect(render(<Box />)).toMatchSnapshot();
+    expect(render(<Box />)).toMatchSnapshot(`
+<p
+  style={
+    Object {
+      "backgroundColor": "#333333",
+      "borderBottomColor": "#333333",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "1px",
+      "borderLeftColor": "#333333",
+      "borderLeftStyle": "solid",
+      "borderLeftWidth": "1px",
+      "borderRightColor": "#333333",
+      "borderRightStyle": "solid",
+      "borderRightWidth": "1px",
+      "borderTopColor": "#333333",
+      "borderTopStyle": "solid",
+      "borderTopWidth": "1px",
+    }
+  }
+/>
+`);
   });
 
   it('overrides and merges styles by value from `style` prop', () => {
@@ -121,7 +246,16 @@ describe('styled', () => {
       font-size: 16px;
       color: red;
     `;
-    expect(render(<Link style={{ color: 'blue' }} />)).toMatchSnapshot();
+    expect(render(<Link style={{ color: 'blue' }} />)).toMatchInlineSnapshot(`
+<a
+  style={
+    Object {
+      "color": "blue",
+      "fontSize": "16px",
+    }
+  }
+/>
+`);
   });
 
   it('overrides and merges styles by value from `.attrs`', () => {
@@ -133,6 +267,15 @@ describe('styled', () => {
       font-size: 16px;
       color: blue;
     `;
-    expect(render(<Link />)).toMatchSnapshot();
+    expect(render(<Link />)).toMatchInlineSnapshot(`
+<a
+  style={
+    Object {
+      "color": "red",
+      "fontSize": "16px",
+    }
+  }
+/>
+`);
   });
 });

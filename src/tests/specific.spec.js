@@ -9,12 +9,24 @@ describe('specific', () => {
     const MsoComponent = styled.center`
       mso-hide: all;
     `;
-    expect(render(<MsoComponent />)).toMatchSnapshot();
+    expect(render(<MsoComponent />)).toMatchInlineSnapshot(`
+<center
+  style={
+    Object {
+      "msoHide": "all",
+    }
+  }
+/>
+`);
   });
 
   it('supports vml specific elements', () => {
     const AnchorLock = styled('w:anchorlock')``;
-    expect(render(<AnchorLock />)).toMatchSnapshot();
+    expect(render(<AnchorLock />)).toMatchInlineSnapshot(`
+<w:anchorlock
+  style={Object {}}
+/>
+`);
   });
 
   it('supports custom attributes', () => {
@@ -22,7 +34,13 @@ describe('specific', () => {
       'xmlns:v': 'urn:schemas-microsoft-com:vml',
       'xmlns:w': 'urn:schemas-microsoft-com:office:word',
     })``;
-    expect(render(<RoundRect />)).toMatchSnapshot();
+    expect(render(<RoundRect />)).toMatchInlineSnapshot(`
+<v:roundrect
+  style={Object {}}
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:w="urn:schemas-microsoft-com:office:word"
+/>
+`);
   });
 
   it('outputs correct units', () => {
@@ -33,7 +51,25 @@ describe('specific', () => {
       right: 5pt;
       line-height: 1.2;
     `;
-    expect(render(<Box />)).toMatchSnapshot();
+    expect(render(<Box />)).toMatchInlineSnapshot(`
+<center
+  style={
+    Object {
+      "left": "-1em",
+      "lineHeight": "1.2",
+      "marginBottom": "10in",
+      "marginLeft": "10in",
+      "marginRight": "10in",
+      "marginTop": "10in",
+      "paddingBottom": "10px",
+      "paddingLeft": "10px",
+      "paddingRight": "10px",
+      "paddingTop": "10px",
+      "right": "5pt",
+    }
+  }
+/>
+`);
   });
 
   it('expands color to 6 digits', () => {
@@ -41,6 +77,26 @@ describe('specific', () => {
       color: #000;
       border: 1px solid #333;
     `;
-    expect(render(<Color />)).toMatchSnapshot();
+    expect(render(<Color />)).toMatchInlineSnapshot(`
+<p
+  style={
+    Object {
+      "borderBottomColor": "#333333",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "1px",
+      "borderLeftColor": "#333333",
+      "borderLeftStyle": "solid",
+      "borderLeftWidth": "1px",
+      "borderRightColor": "#333333",
+      "borderRightStyle": "solid",
+      "borderRightWidth": "1px",
+      "borderTopColor": "#333333",
+      "borderTopStyle": "solid",
+      "borderTopWidth": "1px",
+      "color": "#000000",
+    }
+  }
+/>
+`);
   });
 });

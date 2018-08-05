@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`theme works with \`styled(Component)\` 1`] = `"<h1 style=\\"font-size:30px\\">Hey</h1>"`;
-
-exports[`theme works with \`styled.component\` 1`] = `"<a style=\\"color:green\\">Link</a>"`;
-
-exports[`theme works with \`withTheme\` 1`] = `"<div></div>"`;

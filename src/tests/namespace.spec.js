@@ -1,6 +1,9 @@
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import prettier from 'prettier';
 import styled from '../';
+
+const format = html => prettier.format(html, { parser: 'parse5' });
 
 describe('namespace', () => {
   it('supports vml, wml and office namespaces', () => {
@@ -33,9 +36,27 @@ describe('namespace', () => {
       </RoundRect>
     );
     expect(
-      renderToStaticMarkup(
-        <Button href="https://example.com">Click me</Button>,
+      format(
+        renderToStaticMarkup(
+          <Button href="https://example.com">Click me</Button>,
+        ),
       ),
-    ).toMatchSnapshot();
+    ).toMatchSnapshot(`
+"
+<v:roundrect arcsize=\\"10%\\"
+  strokecolor=\\"#1e3650\\"
+  fill=\\"true\\"
+  href=\\"https://example.com\\"
+  style=\\"v-text-anchor:middle;height:40px;width:200px\\">
+  <w:anchorlock />
+
+  <v:fill type=\\"tile\\"
+    src=\\"https://i.imgur.com/0xPEf.gif\\"
+    color=\\"#556270\\" />
+
+  <center style=\\"font-family:sans-serif;font-weight:bold;font-size:13px;color:#ffffff\\">Click me
+  </center>
+</v:roundrect>"
+`);
   });
 });

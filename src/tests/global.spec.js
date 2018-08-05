@@ -15,6 +15,10 @@ describe('global', () => {
   it('works with `injectGlobal`', () => {
     const sheet = new ServerStyleSheet();
     renderToStaticMarkup(sheet.collectStyles(<Document color="blue" />));
-    expect(sheet.getStyleTags()).toMatchSnapshot();
+    expect(sheet.getStyleTags()).toMatchInlineSnapshot(`
+"<style data-styled-components=\\"\\">
+/* sc-component-id: sc-global-2614879494 */
+html{color:blue;}</style>"
+`);
   });
 });

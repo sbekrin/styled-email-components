@@ -13,7 +13,7 @@ describe('theme', () => {
           <Link>Link</Link>
         </ThemeProvider>,
       ),
-    ).toMatchSnapshot();
+    ).toMatchInlineSnapshot(`"<a style=\\"color:green\\">Link</a>"`);
   });
 
   it('works with `styled(Component)`', () => {
@@ -27,7 +27,7 @@ describe('theme', () => {
           <StyledHeading>Hey</StyledHeading>
         </ThemeProvider>,
       ),
-    ).toMatchSnapshot();
+    ).toMatchInlineSnapshot(`"<h1 style=\\"font-size:30px\\">Hey</h1>"`);
   });
 
   it('works with `withTheme`', () => {
@@ -41,6 +41,6 @@ describe('theme', () => {
           <StyledComponent />
         </ThemeProvider>,
       ),
-    ).toMatchSnapshot();
+    ).toMatchInlineSnapshot(`"<div></div>"`);
   });
 });
