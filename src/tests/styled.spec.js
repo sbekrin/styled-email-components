@@ -278,4 +278,18 @@ describe('styled', () => {
 />
 `);
   });
+
+  it('works with styles-returning function API', () => {
+    const Link = styled.a(({ color }) => ({ color }));
+    expect(render(<Link color="blue" />)).toMatchInlineSnapshot(`
+<a
+  color="blue"
+  style={
+    Object {
+      "color": "blue",
+    }
+  }
+/>
+`);
+  });
 });
