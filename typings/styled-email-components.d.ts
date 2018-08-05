@@ -3,8 +3,7 @@ import {
   css,
   keyframes,
   injectGlobal,
-  // Uncomment once https://github.com/styled-components/styled-components/pull/1827 is released
-  // isStyledComponent,
+  isStyledComponent,
   consolidateStreamedStyles,
   ThemeProvider,
   withTheme,
@@ -181,7 +180,7 @@ export {
   css,
   keyframes,
   injectGlobal,
-  // isStyledComponent,
+  isStyledComponent,
   consolidateStreamedStyles,
   ThemeProvider,
   withTheme,
