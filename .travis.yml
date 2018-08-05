@@ -12,6 +12,7 @@ script:
   - yarn lint
   - yarn build
   - yarn test
-  - yarn test-types
+  # Uncomment this styled-components/issues/1885 is released
+  # - yarn test-types
 after_script:
   - greenkeeper-lockfile-upload
