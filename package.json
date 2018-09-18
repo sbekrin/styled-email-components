@@ -20,7 +20,7 @@
   "dependencies": {
     "color-shorthand-hex-to-six-digit": "^2.3.0",
     "css-shorthand-expand": "^1.2.0",
-    "fbjs": "^0.8.17",
+    "fbjs": "^1.0.0",
     "postcss-safe-parser": "^4.0.1"
   },
   "devDependencies": {
