@@ -7,7 +7,6 @@
   "main": "lib/index.js",
   "typings": "typings/styled-email-components.d.ts",
   "scripts": {
-    "precommit": "lint-staged",
     "prebuild": "rm -rf ./lib",
     "build": "babel ./src --out-dir lib --ignore tests",
     "lint": "eslint . --ignore-path .gitignore",
@@ -98,5 +97,10 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
