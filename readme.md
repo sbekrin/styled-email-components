@@ -3,10 +3,15 @@
 [![npm Version](https://img.shields.io/npm/v/styled-email-components.svg)](https://www.npmjs.com/package/styled-email-components)
 [![Build Status](https://img.shields.io/travis/sergeybekrin/styled-email-components.svg)](https://travis-ci.org/sergeybekrin/styled-email-components)
 [![dependencies Status](https://img.shields.io/david/sergeybekrin/styled-email-components.svg)](https://david-dm.org/sergeybekrin/styled-email-components)
-[![devDependencies Status](https://img.shields.io/david/dev/sergeybekrin/styled-email-components.svg)](https://david-dm.org/sergeybekrin/styled-email-components?type=dev) [![Greenkeeper badge](https://badges.greenkeeper.io/sergeybekrin/styled-email-components.svg)](https://greenkeeper.io/)
+[![devDependencies Status](https://img.shields.io/david/dev/sergeybekrin/styled-email-components.svg)](https://david-dm.org/sergeybekrin/styled-email-components?type=dev)
+[![Greenkeeper badge](https://badges.greenkeeper.io/sergeybekrin/styled-email-components.svg)](https://greenkeeper.io/)
 
 Extension of [`styled-components`](https://www.styled-components.com/) with
 essential features for building email components.
+
+> **Important:** due to dependencies on styled-components internals, latest
+> compatible version of styled-components is `3.4.1`. We'll re-evaluate design
+> of this module after stable `v4` release of styled-components. Thanks!
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
