@@ -35,7 +35,7 @@
     "eslint": "^5.3.0",
     "eslint-config-prettier": "^3.0.0",
     "eslint-config-unobtrusive": "^1.2.2",
-    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.9.1",
     "husky": "^1.0.0",
     "jest": "^23.4.2",
