@@ -87,8 +87,8 @@ renderToStaticMarkup(<Link href="https://example.com">Hey</Link>),
 ### `styled.*`
 
 This module sets list of XHTML 1.0 Transitional
-[element aliases](./src/utils/xhtml-elements.js) instead of original HTML5 set,
-which is a widely used doctype in mails.
+[element aliases](./src/utils/xhtml-elements.js) instead of the original HTML5 set,
+which is a widely used doctype in emails.
 
 ### `styled.vml.*`
 
