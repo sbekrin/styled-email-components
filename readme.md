@@ -7,7 +7,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/sergeybekrin/styled-email-components.svg)](https://greenkeeper.io/)
 
 Extension of [`styled-components`](https://www.styled-components.com/) with
-essential features for building email components.
+essential features for building email components.sett
 
 > **Important:** due to dependencies on styled-components internals, latest
 > compatible version of styled-components is `3.4.1`. We'll re-evaluate design
