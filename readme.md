@@ -1,10 +1,10 @@
 # 💌 styled-email-components
 
 [![npm Version](https://img.shields.io/npm/v/styled-email-components.svg)](https://www.npmjs.com/package/styled-email-components)
-[![Build Status](https://img.shields.io/travis/sergeybekrin/styled-email-components.svg)](https://travis-ci.org/sergeybekrin/styled-email-components)
-[![dependencies Status](https://img.shields.io/david/sergeybekrin/styled-email-components.svg)](https://david-dm.org/sergeybekrin/styled-email-components)
-[![devDependencies Status](https://img.shields.io/david/dev/sergeybekrin/styled-email-components.svg)](https://david-dm.org/sergeybekrin/styled-email-components?type=dev)
-[![Greenkeeper badge](https://badges.greenkeeper.io/sergeybekrin/styled-email-components.svg)](https://greenkeeper.io/)
+[![Build Status](https://img.shields.io/travis/sbekrin/styled-email-components.svg)](https://travis-ci.org/sbekrin/styled-email-components)
+[![dependencies Status](https://img.shields.io/david/sbekrin/styled-email-components.svg)](https://david-dm.org/sbekrin/styled-email-components)
+[![devDependencies Status](https://img.shields.io/david/dev/sbekrin/styled-email-components.svg)](https://david-dm.org/sbekrin/styled-email-components?type=dev)
+[![Greenkeeper badge](https://badges.greenkeeper.io/sbekrin/styled-email-components.svg)](https://greenkeeper.io/)
 
 Extension of [`styled-components`](https://www.styled-components.com/) with
 essential features for building email components.
