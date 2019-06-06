@@ -1,27 +1,28 @@
 import {
   css,
-  injectGlobal,
+  keyframes,
+  createGlobalStyle,
   isStyledComponent,
+  ThemeConsumer,
+  ThemeContext,
   ThemeProvider,
   withTheme,
   ServerStyleSheet,
   StyleSheetManager,
 } from 'styled-components';
-import createStyledNativeComponent from 'styled-components/lib/models/StyledNativeComponent';
-import createConstructWithOptions from 'styled-components/lib/constructors/constructWithOptions';
-import xhtmlElements from './utils/xhtml-elements';
-import createMailStyle from './inline-mail-style';
-import ParentComponent from './styled-component';
-import StyleSheet from './stylesheet';
+import createStyledNativeComponent from 'styled-components/src/models/StyledNativeComponent';
+import constructWithOptions from 'styled-components/src/constructors/constructWithOptions';
+import StyleSheet from 'react-native-web/src/exports/StyleSheet';
+import xhtmlElements from './utils/xhtmlElements';
+import createMailStyle from './InlineMailStyle';
+import StyledMailComponent from './StyledMailComponent';
 
 const InlineStyle = createMailStyle(StyleSheet);
-const constructWithOptions = createConstructWithOptions(css);
-const createStyledComponent = createStyledNativeComponent(
-  constructWithOptions,
-  InlineStyle,
-);
-const styled = element =>
-  constructWithOptions(createStyledComponent, element, { ParentComponent });
+const StyledNativeComponent = createStyledNativeComponent(InlineStyle);
+const styled = tag =>
+  constructWithOptions(StyledNativeComponent, tag, {
+    ParentComponent: StyledMailComponent,
+  });
 
 // Set xhtml element aliases
 xhtmlElements.forEach(element =>
@@ -31,7 +32,7 @@ xhtmlElements.forEach(element =>
     get() {
       return styled(element);
     },
-  }),
+  })
 );
 
 // Set VML (v:*), WML (w:*) and Office (o:*) dynamic aliases
@@ -59,8 +60,11 @@ xhtmlElements.forEach(element =>
 export default styled;
 export {
   css,
-  injectGlobal,
+  keyframes,
+  createGlobalStyle,
   isStyledComponent,
+  ThemeConsumer,
+  ThemeContext,
   ThemeProvider,
   withTheme,
   ServerStyleSheet,

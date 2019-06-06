@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { injectGlobal, ServerStyleSheet } from '../';
+import { injectGlobal, ServerStyleSheet } from 'styled-email-components';
 
 describe('global', () => {
   const Document = props => {

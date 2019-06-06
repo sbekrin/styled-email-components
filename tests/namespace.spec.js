@@ -1,9 +1,9 @@
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import prettier from 'prettier';
-import styled from '../';
+import styled from 'styled-email-components';
 
-const format = html => prettier.format(html, { parser: 'parse5' });
+const format = html => prettier.format(html, { parser: 'html' });
 
 describe('namespace', () => {
   it('supports vml, wml and office namespaces', () => {
@@ -38,9 +38,9 @@ describe('namespace', () => {
     expect(
       format(
         renderToStaticMarkup(
-          <Button href="https://example.com">Click me</Button>,
-        ),
-      ),
+          <Button href="https://example.com">Click me</Button>
+        )
+      )
     ).toMatchSnapshot(`
 "
 <v:roundrect arcsize=\\"10%\\"

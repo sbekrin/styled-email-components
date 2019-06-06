@@ -1,18 +1,7 @@
 language: node_js
-node_js:
-  - 8
-  - 10
-before_install:
-  - yarn global add greenkeeper-lockfile@1
-install:
-  - yarn
-before_script:
-  - greenkeeper-lockfile-update
+node_js: 10
+cache: yarn
 script:
   - yarn lint
   - yarn build
   - yarn test
-  # Uncomment this styled-components/issues/1885 is released
-  # - yarn test-types
-after_script:
-  - greenkeeper-lockfile-upload

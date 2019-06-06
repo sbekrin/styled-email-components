@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestRenderer from 'react-test-renderer';
-import styled, { css } from '../';
+import styled, { css } from 'styled-email-components';
 
 const render = element => ReactTestRenderer.create(element).toJSON();
 
@@ -208,7 +208,7 @@ describe('styled', () => {
 />
 `);
     expect(lastConsoleWarn).toMatchInlineSnapshot(
-      `"Node of type rule not supported as an inline style"`,
+      `"Node of type rule not supported as an inline style"`
     );
     console.warn = originalConsoleWarn;
   });

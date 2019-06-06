@@ -4,20 +4,27 @@
   "description": "💌 styled-components for emails",
   "author": "Sergey Bekrin <sergey@bekrin.me>",
   "license": "MIT",
-  "main": "lib/index.js",
-  "typings": "typings/styled-email-components.d.ts",
-  "scripts": {
-    "prebuild": "rm -rf ./lib",
-    "build": "babel ./src --out-dir lib --ignore tests",
-    "lint": "eslint . --ignore-path .gitignore",
-    "test": "jest",
-    "test-types": "tsc --noEmit typings/**/*.spec.tsx"
+  "repository": "sbekrin/styled-email-components",
+  "main": "dist/styled-email-components.cjs.js",
+  "jsnext:main": "dist/styled-email-components.esm.js",
+  "module": "dist/styled-email-components.esm.js",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "browser": {
+    "./dist/styled-email-components.esm.js": "./dist/styled-email-components.browser.esm.js",
+    "./dist/styled-email-components.cjs.js": "./dist/styled-email-components.browser.cjs.js"
   },
-  "engines": {
-    "node": ">=8"
+  "scripts": {
+    "build": "NODE_ENV=production rollup --config",
+    "lint": "eslint . --ignore-path .gitignore",
+    "pretest": "yarn build",
+    "test": "jest"
   },
   "dependencies": {
-    "color-shorthand-hex-to-six-digit": "^2.3.0",
+    "@emotion/is-prop-valid": "^0.7.3",
+    "color-shorthand-hex-to-six-digit": "^2.10.24",
     "css-shorthand-expand": "^1.2.0",
     "fbjs": "^1.0.0",
     "postcss-safe-parser": "^4.0.1"
@@ -25,82 +32,61 @@
   "devDependencies": {
     "@types/node": "^11.9.0",
     "@types/react": "^16.4.7",
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^10.0.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "doctoc": "^1.3.1",
-    "eslint": "^5.3.0",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-config-unobtrusive": "^1.2.2",
-    "eslint-plugin-prettier": "^3.0.0",
-    "eslint-plugin-react": "^7.9.1",
-    "husky": "^2.0.0",
-    "jest": "^23.4.2",
-    "lint-staged": "^8.0.0",
-    "prettier": "^1.14.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-test-renderer": "^16.4.2",
-    "styled-components": "^3.4.1",
-    "typescript": "^3.0.1"
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-macros": "^2.4.2",
+    "babel-plugin-preval": "^3.0.1",
+    "babel-plugin-tester": "^5.5.1",
+    "babel-plugin-transform-class-properties": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.14",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.22.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-native-web": "^0.11.4",
+    "react-test-renderer": "^16.8.6",
+    "rollup": "^0.66.5",
+    "rollup-plugin-alias": "^1.5.2",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-flow": "^1.1.1",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-replace": "^1.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-terser": "^3.0.0",
+    "spire": "^1.7.2",
+    "spire-plugin-semantic-release": "^1.7.2",
+    "spire-plugin-yarn": "^1.7.1",
+    "styled-components": "^4.3.1",
+    "styled-components-project": "https://github.com/styled-components/styled-components.git#v4.3.1"
   },
   "peerDependencies": {
-    "react": ">=15",
-    "styled-components": "^3 <=3.4.1"
+    "styled-components": ">=4"
   },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all",
-    "proseWrap": "always"
+  "spire": {
+    "extends": "spire-config-default",
+    "plugins": [
+      "spire-plugin-yarn",
+      "spire-plugin-semantic-release"
+    ]
   },
   "babel": {
     "presets": [
-      "env",
-      "react"
-    ],
-    "plugins": [
-      "transform-class-properties",
-      "transform-object-rest-spread"
+      "./babel.config.js"
     ]
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": [
-      "prettier",
-      "prettier/react",
-      "unobtrusive",
-      "unobtrusive/react"
-    ],
-    "env": {
-      "es6": true,
-      "node": true
-    }
   },
   "jest": {
-    "testEnvironment": "node"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ],
-    "*.md": [
-      "prettier --write",
-      "git add"
-    ],
-    "readme.md": [
-      "doctoc --github --notitle --maxlevel 3",
-      "prettier --write",
-      "git add"
+    "testEnvironment": "node",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(styled-components|react-native-web)/)"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "resolutions": {
+    "babel-jest": "23.6.0"
   }
 }

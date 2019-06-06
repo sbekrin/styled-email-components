@@ -6,18 +6,14 @@
 [![devDependencies Status](https://img.shields.io/david/dev/sbekrin/styled-email-components.svg)](https://david-dm.org/sbekrin/styled-email-components?type=dev)
 [![Greenkeeper badge](https://badges.greenkeeper.io/sbekrin/styled-email-components.svg)](https://greenkeeper.io/)
 
-Extension of [`styled-components`](https://www.styled-components.com/) with
-essential features for building email components.
-
-> **Important:** due to dependencies on styled-components internals, latest
-> compatible version of styled-components is `3.4.1`. We'll re-evaluate design
-> of this module after stable `v4` release of styled-components. Thanks!
+Extension of [styled-components](https://www.styled-components.com/) with
+essentials for building email-first components.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Features](#features)
 - [Motivation](#motivation)
+- [Features](#features)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
 - [API](#api)
@@ -28,35 +24,29 @@ essential features for building email components.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Features
-
-- Styles are injected inline
-- [Shorthand rules](./src/css-to-style.js#L6) are expanded
-- [`styled.*` aliases](./src/utils/xhtml-elements.js) are XHTML compliant
-- Supports [Outlook-specific elements](#styledvml)
-- Compatible with [original APIs](https://www.styled-components.com/docs/api)
-- Provides TypeScript typings
-
 ## Motivation
 
 `styled-components` is a universal styling solution with great developer
 experience and low learning curve. Unfortunately, there's no native support for
-inline styling which is essential for building emails. This module adds all
-necessary features to build mail-first components.
+inline styling which is necessary for building mails. This module adds all
+missing features to fill the gap and enable you to build mail-first components.
+
+## Features
+
+- Styles are injected inline
+- Shorthand rules are expanded
+- [`styled.*` aliases](./src/utils/xhtmlElements.js) are XHTML compliant
+- [Outlook-specific elements](#styledvml) first-class support
+- Compatible with [original APIs](https://www.styled-components.com/docs/api)
+- Provides TypeScript typings
 
 ## Installation
 
-Don't forget to install `styled-components` itself as a peer dependency.
-
-yarn:
-
 ```sh
+# yarn
 yarn add styled-email-components styled-components
-```
 
-npm:
-
-```sh
+# npm
 npm install --save styled-email-components styled-components
 ```
 
@@ -64,7 +54,7 @@ npm install --save styled-email-components styled-components
 
 Check original
 [Gettings Started](https://www.styled-components.com/docs/basics#getting-started)
-for more examples.
+guide for more examples.
 
 ```js
 import React from 'react';
@@ -87,8 +77,8 @@ renderToStaticMarkup(<Link href="https://example.com">Hey</Link>),
 ### `styled.*`
 
 This module sets list of XHTML 1.0 Transitional
-[element aliases](./src/utils/xhtml-elements.js) instead of the original HTML5 set,
-which is a widely used doctype in emails.
+[element aliases](./src/utils/xhtmlElements.js) instead of the original HTML5
+set, which is a widely used doctype in emails.
 
 ### `styled.vml.*`
 
@@ -99,7 +89,7 @@ names as-is with `v:`, `w:` and `o:` prefixes respectevly.
 ### Other APIs
 
 [Original APIs](https://www.styled-components.com/docs/api) are mirrored without
-any modifications from `styled-components`. Make sure to check
+any changes from `styled-components`. Make sure to check
 [server-side rendering](https://www.styled-components.com/docs/advanced#server-side-rendering)
 guide for rendering the final email.
 

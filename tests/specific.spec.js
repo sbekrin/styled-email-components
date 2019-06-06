@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestRenderer from 'react-test-renderer';
-import styled from '../';
+import styled from 'styled-email-components';
 
 const render = element => ReactTestRenderer.create(element).toJSON();
 

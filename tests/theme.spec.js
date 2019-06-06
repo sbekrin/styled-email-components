@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import styled, { withTheme, ThemeProvider } from '../';
+import styled, { withTheme, ThemeProvider } from 'styled-email-components';
 
 describe('theme', () => {
   it('works with `styled.component`', () => {
@@ -11,8 +11,8 @@ describe('theme', () => {
       renderToStaticMarkup(
         <ThemeProvider theme={{ color: 'green' }}>
           <Link>Link</Link>
-        </ThemeProvider>,
-      ),
+        </ThemeProvider>
+      )
     ).toMatchInlineSnapshot(`"<a style=\\"color:green\\">Link</a>"`);
   });
 
@@ -25,8 +25,8 @@ describe('theme', () => {
       renderToStaticMarkup(
         <ThemeProvider theme={{ size: '30px' }}>
           <StyledHeading>Hey</StyledHeading>
-        </ThemeProvider>,
-      ),
+        </ThemeProvider>
+      )
     ).toMatchInlineSnapshot(`"<h1 style=\\"font-size:30px\\">Hey</h1>"`);
   });
 
@@ -39,8 +39,8 @@ describe('theme', () => {
       renderToStaticMarkup(
         <ThemeProvider theme={{ attribute: 42 }}>
           <StyledComponent />
-        </ThemeProvider>,
-      ),
+        </ThemeProvider>
+      )
     ).toMatchInlineSnapshot(`"<div></div>"`);
   });
 });

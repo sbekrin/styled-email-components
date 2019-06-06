@@ -1,7 +1,7 @@
-import createHash from 'styled-components/lib/vendor/glamor/hash';
-import flatten from 'styled-components/lib/utils/flatten';
+import createHash from 'styled-components/src/vendor/glamor/hash';
+import flatten from 'styled-components/src/utils/flatten';
 import parse from 'postcss-safe-parser';
-import cssToStyle from './css-to-style';
+import cssToStyle from './convertTupleToStyle';
 
 let generated = {};
 
@@ -28,11 +28,9 @@ export default stylesheet => {
             case 'comment':
               return;
             default:
-              if (process.env.NODE_ENV !== 'production') {
-                console.warn(
-                  `Node of type ${node.type} not supported as an inline style`,
-                );
-              }
+              throw new Error(
+                `Node of type ${node.type} not supported as an inline style`
+              );
           }
         });
         const styles = cssToStyle(rules);
