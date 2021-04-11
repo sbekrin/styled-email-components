@@ -12,6 +12,9 @@
     "./dist/styled-email-components.esm.js": "./dist/styled-email-components.browser.esm.js",
     "./dist/styled-email-components.cjs.js": "./dist/styled-email-components.browser.cjs.js"
   },
+  "files": [
+    "dist"
+  ],
   "types": "./styled-email-components.d.ts",
   "scripts": {
     "postinstall": "yarn --cwd vendor/styled-components/packages/styled-components generateErrors",
