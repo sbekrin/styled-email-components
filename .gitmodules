@@ -1,0 +1,4 @@
+[submodule "styled-components"]
+	path = vendor/styled-components
+	url = https://github.com/styled-components/styled-components.git
+	branch = legacy-v5
