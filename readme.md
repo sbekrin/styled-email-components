@@ -13,7 +13,7 @@ essential features for building email components.
 - Styles are injected inline
 - [Shorthand rules](./src/css-to-style.js#L6) are expanded
 - [`styled.*` aliases](./src/utils/xhtml-elements.js) are XHTML compliant
-- Supports [Outlook-specific elements](#styledvml)
+- Supports [Outlook-specific elements](#outlook-specific-vml-elements)
 - Compatible with [original APIs](https://www.styled-components.com/docs/api)
 - Provides TypeScript typings
 
@@ -26,18 +26,16 @@ necessary features to build mail-first components.
 
 ## Installation
 
-Don't forget to install `styled-components` itself as a peer dependency.
-
 yarn:
 
 ```sh
-yarn add styled-email-components styled-components
+yarn add styled-email-components
 ```
 
 npm:
 
 ```sh
-npm install --save styled-email-components styled-components
+npm install --save styled-email-components
 ```
 
 ## Getting Started
@@ -70,11 +68,11 @@ This module sets list of XHTML 1.0 Transitional
 [element aliases](./src/utils/xhtml-elements.js) instead of the original HTML5 set,
 which is a widely used doctype in emails.
 
-### `styled.vml.*`
+### Outlook-specific VML elements
 
 In addition to XHTML elements, `styled.vml.*`, `styled.wml.*` and
 `styled.office.*` aliases are available. These are simple proxies and pass tag
-names as-is with `v:`, `w:` and `o:` prefixes respectevly.
+names as-is with `v:`, `w:` and `o:` prefixes respectively.
 
 ### Other APIs
 
