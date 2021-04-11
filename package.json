@@ -19,11 +19,15 @@
     "build": "rollup -c"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "1.1.0",
+    "@emotion/stylis": "0.8.5",
+    "@emotion/unitless": "0.7.5",
     "color-shorthand-hex-to-six-digit": "3.0.7",
     "css-shorthand-expand": "1.2.0",
     "hoist-non-react-statics": "3.3.2",
     "lodash.camelcase": "4.3.0",
-    "postcss-safe-parser": "5.0.2"
+    "postcss-safe-parser": "5.0.2",
+    "shallowequal": "1.1.0"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0",
@@ -34,7 +38,7 @@
     "@babel/preset-env": "7.0.0",
     "@babel/preset-flow": "7.12.13",
     "@babel/preset-react": "7.0.0",
-    "@types/jest": "^26.0.22",
+    "@types/jest": "26.0.22",
     "babel-jest": "26.5.2",
     "babel-plugin-add-module-exports": "1.0.2",
     "babel-plugin-module-resolver": "4.1.0",
