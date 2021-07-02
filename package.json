@@ -13,7 +13,8 @@
     "./dist/styled-email-components.cjs.js": "./dist/styled-email-components.browser.cjs.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "styled-email-components.d.ts"
   ],
   "types": "./styled-email-components.d.ts",
   "scripts": {
